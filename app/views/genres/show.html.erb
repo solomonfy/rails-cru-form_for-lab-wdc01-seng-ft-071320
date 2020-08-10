@@ -1,0 +1,13 @@
+<h1> Genre info </h1>
+
+
+<h1>Artists with <%= @genre.name %> genre</h1>
+<% @genre.artists.each do |artist| %>
+<li><%= link_to artist.name, artist_path(artist) %></li>
+<% end %>
+
+
+<br><br><br><br>
+<%= link_to 'Back to homepage', genres_path %>
+<br><br><br><br>
+<%= link_to "Edit Genre", edit_genre_path %>

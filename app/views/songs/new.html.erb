@@ -1,0 +1,15 @@
+<h1> Add new song to artist </h1>
+
+<%= form_for @song do |f| %>
+    
+    <%= f.label "Song name:" %>
+    <%= f.text_field :name %> <br><br>
+    <%= f.label "Artist id:" %>
+    <%= f.select :artist_id, Artist.all.pluck(:name, :id), {prompt: 'select artist'}, {class: "form-control"}%> <br><br>
+    <%= f.label genre %>
+    <%= f.select :genre_id, Genre.all.pluck(:name, :id), {prompt: 'select genre'}, {class: "form-control"}%> <br><br>
+    <%= f.submit %>
+
+<% end %>
+ <br><br> <br><br>
+<%= link_to 'Cancel', songs_path %>

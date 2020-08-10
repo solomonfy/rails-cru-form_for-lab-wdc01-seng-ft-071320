@@ -1,0 +1,20 @@
+<h1> <%= @artist.name %> information </h1>
+
+    <li>Name: <%= @artist.name %> </li>
+    <li><p>Bio: <%= @artist.bio %><p></li>
+
+<li>Songs: 
+<% @artist.songs.each do |song| %>
+    <div> <%=  link_to song.name, song_path(song) %> - 
+        <span><%= link_to song.genre.name, genre_path(song.genre) %></span>
+<% end %>
+</div>
+
+
+
+<br><br><br><br><br><br>
+<%= link_to 'Back', artists_path %>
+<br><br>
+<%= link_to 'Edit', edit_artist_path %>
+<br><br>
+<%= link_to 'Destroy', artist_path, method: :delete, data: {confirm: "Are you sure?" } %>

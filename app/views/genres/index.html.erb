@@ -1,0 +1,10 @@
+<h1> List of all genres </h1>
+
+Genre name:
+<ul>
+<% @genres.uniq.each do |genre| %>
+<li> <%= link_to genre.name, genre_path(genre) %> </li>
+<% end %>
+</ul>
+
+<%= link_to "Create Genre", new_genre_path %>

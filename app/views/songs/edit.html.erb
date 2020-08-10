@@ -1,0 +1,14 @@
+<h3>Song Form</h3>
+
+<%= form_for(@song) do |f| %>
+  <label>Song name:</label><br><br>
+  <%= f.text_field :name %><br><br>
+  <label>Artist id:</label><br><br>
+  <%= f.text_field :artist_id %><br><br>
+  <label>Genre id:</label><br><br>
+  <%= f.text_field :genre_id %><br><br>
+  <%= f.submit %>
+<% end %>
+
+ <br><br> <br><br>
+<%= link_to 'Cancel', song_path(@song) %>
